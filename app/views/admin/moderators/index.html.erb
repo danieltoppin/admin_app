@@ -14,6 +14,7 @@
 			<td><%= moderator.fullname %></td>
 			<td><%= moderator.username %></td>
 			<td><%= time_ago_in_words(moderator.created_at) %> ago</td>
+			<td><%= link_to 'Edit', edit_admin_moderator_path(moderator) %></td>
 		</tr>
 		<% end %>
 	</tbody>
