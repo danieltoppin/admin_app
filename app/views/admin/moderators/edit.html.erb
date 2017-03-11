@@ -1,5 +1,23 @@
 <h3>Edit Moderators</h3>
 
 <%= form_for [:admin, @moderator] do |f| %>
+	<p>
+		<%= f.label :fullname %>
+		<%= f.text_field :fullname %>
+	</p>
 
+	<p>
+		<%= f.label :username %>
+		<%= f.text_field :username %>
+	</p>
+
+	<p>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+
+	</p>
 <% end %>
