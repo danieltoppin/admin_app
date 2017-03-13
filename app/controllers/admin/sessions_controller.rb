@@ -5,6 +5,9 @@ class Admin::SessionsController < ApplicationController
   end
 
   def create
+  	#@moderator = Moderator.find_by(username: params[:username]).authenticate(params[:password])
+  	#session[:current_moderator_id] = @moderator.id
+  	byebug
   end
 
   def destroy

@@ -1,4 +1,5 @@
 class Admin::ModeratorsController < Admin::ApplicationController
+	has_secure_password
 
 def index
 	@moderators = Moderator.all
