@@ -1,5 +1,5 @@
 class Admin::SessionsController < ApplicationController
-  before_action :authorize, except: [:new, :create]
+  before_action :authorize, except: [:new, :create, :destroy]
 
   def new
   end
@@ -9,7 +9,7 @@ class Admin::SessionsController < ApplicationController
   	if @moderator
       session[:current_moderator_id] = @moderator.id
       redirect_to admin_moderators_url, notice: "You have successfully signed in"
-      #byebug
+  
     else
       flash[:alert] = 'There was a problem with your username or password'
       render :new
