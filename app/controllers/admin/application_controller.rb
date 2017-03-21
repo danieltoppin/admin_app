@@ -8,7 +8,7 @@ class Admin::ApplicationController < ActionController::Base
 	end
 
 	def authorize
-		unless :current_moderator_id
+		unless current_moderator
 			redirect_to '/login', alert: 'Please login to view admin'
 		end
 	end

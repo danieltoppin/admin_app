@@ -1,5 +1,5 @@
-class Admin::SessionsController < ApplicationController
-  before_action :authorize, except: [:new, :create, :destroy]
+class Admin::SessionsController < Admin::ApplicationController
+  before_action :authorize, except: [:new, :create]
 
   def new
   end
