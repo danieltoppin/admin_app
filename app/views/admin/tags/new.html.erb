@@ -20,13 +20,17 @@
 		<% @tags.each do |tag| %>
 		<tr>			
 			<td><%= tag.name %></td>
-			<td><%= status_converter(tag.in_use? , truthy: 'In use', falsey: 'Not in use') %></td>
+			<td><%= status_converter(tag.in_use?, truthy: 'In use', falsey: 'Not in use') %></td>
 			<td><%= time_ago tag.created_at %></td>
 			<td>
-				<%=link_to edit_admin_tag_path(tag) do %>
+				<%= link_to edit_admin_tag_path(tag) do %>
 				<button type="button">Edit</button>
 				<% end %>
+
+			<%= create_deletable_button tag %>
+
 			</td>
+
 		</tr>
 		<% end %>
 
