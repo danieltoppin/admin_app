@@ -6,6 +6,9 @@
 </p>
 
 <% @comments.each do |comment| %>
-<p><b><%= comment.visitor.fullname %></b> posted message on
+<p><b><%= comment.visitor.fullname %></b> posted message on 
 	<b><%= comment.post.title %></b></p>
+<p><%= comment.message %></p>
+<p><%= link_to 'Delete', admin_comment_path(comment), method: :delete, data: {confirm: 'Are you sure?'} %></p>
+<hr>
 <% end %>
