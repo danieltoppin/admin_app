@@ -4,6 +4,12 @@ class Admin::CommentsController < Admin::ApplicationController
   end
 
   def update
+  	@comment = Comment.find(params[:id])
+  	if @comment.update(status: params[:status])
+  		redirect_to :back, notice: 'Successfully updated comment'
+  	else
+  		redirect_to :back, notice: 'There was a problem updating comment'
+  	end
   end
 
   def destroy
